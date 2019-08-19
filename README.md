@@ -1,5 +1,5 @@
 
-[![General Assembly Logo](https://raw.git.generalassemb.ly/software-engineering-immersive/SEI-Course-Materials/master/ga_cog.png)
+![General Assembly Logo](https://raw.git.generalassemb.ly/software-engineering-immersive/SEI-Course-Materials/master/ga_cog.png)
 
 # The Captain's Log
 
