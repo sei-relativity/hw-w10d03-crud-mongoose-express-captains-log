@@ -28,8 +28,6 @@ There are many ways to get started building an app. This lab follows a specific 
 
 If you finish lab early consider:
 
-  - adding some CSS and practice styling your app
-  - try working with the date object! Try to make it look human readable in HTML. It's tricky! [A Hint](https://momentjs.com/)
   - try working through the next section of the lab before it is covered in lecture - see what you can figure out
   - **SUPER BONUS** - Once you finish this whole lab, add a second model for comments, it should have the name of the person who wrote it, and some text for the comment (maybe time stamps?). This model should 'belong' the the post, the data should be related in some way. Do you own research of how to set up a `one-to-many` relationship (one post can have many comments, one comment only belongs to one post), in MongoDB. Use Mongo Documents, Google, or [Matt's Notes](https://git.generalassemb.ly/Web-Development-Immersive-Remote/WDIR-Stan-Lee/tree/master/unit_2/w07d01/instructor_notes) - note we will not have class time to teach a second, related model. 
 
@@ -74,12 +72,15 @@ Let's keep track of our Restful Routes as we build out our app.
 
 ## Bonuses
 1. The captain wants to keep track of eating habits: make a new set of routes in a new file in your controller folder called foodlogs
-  1. build out the 7 restful routes for foodlogs, include a new model with whatever properties make sense
+  1. build out the 5 restful routes for foodlogs, include a new model with whatever properties make sense
 1. make a seed file and seed it
 1. have your update route redirect to the show page of the log that was edited
 1. create a seed file and seed your database
-1. work on your css, make this Captain's Log look awesome!
 1. if you have timestamps, figure out how to edit/display the edited date
+
+## Super Bonus
+
+Create a React front end and comsume a few of these endpoints!
 
 ---
 
