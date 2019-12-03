@@ -1,0 +1,24 @@
+{
+  "name": "hw-w10d03-crud-mongoose-express-captains-log",
+  "version": "1.0.0",
+  "description": "![General Assembly Logo](https://raw.git.generalassemb.ly/software-engineering-immersive/SEI-Course-Materials/master/ga_cog.png)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamjahb/hw-w10d03-crud-mongoose-express-captains-log.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamjahb/hw-w10d03-crud-mongoose-express-captains-log/issues"
+  },
+  "homepage": "https://github.com/hamjahb/hw-w10d03-crud-mongoose-express-captains-log#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13"
+  }
+}
