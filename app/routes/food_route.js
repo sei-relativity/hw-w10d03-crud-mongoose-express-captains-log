@@ -4,21 +4,21 @@ const express = require('express');
 // Instantiate a router (mini app that only handle routes)
 const router = express.Router();
 
-// pull in mongoose model fr log
-const Log = require('../models/log');
+// pull in mongoose model fr food
+const Food = require('../models/food');
 
 
 /** 
  * Action:          INDEX
  * Method:         GET
- * URI:            /logs
- * Description: Get all logs
+ * URI:            /food
+ * Description: Get all food
 */
-router.get('/logs', (req, res) =>{
-    Log.find({}, (error, logs) => {
-        // return all logs
+router.get('/foods', (req, res) =>{
+ Food.find({}, (error, foods) => {
+        // return all foods
         if(!error) {
-            res.status(200).json({logs: logs})
+            res.status(200).json({foods: foods})
         } else {
             res.status(500).json ({error: error})
         }
@@ -31,12 +31,12 @@ router.get('/logs', (req, res) =>{
  * Action:         CREATE
  * Method:         POST
  * URI:            /logs
- * Description: Create new log
+ * Description: Create new food
 */
-router.post('/log', (req, res) => {
-    Log.create(req.body, (error, log) => {
+router.post('/food', (req, res) => {
+ Food.create(req.body, (error, food) => {
         if (!error) {
-            res.status(201).json({ log })
+            res.status(201).json({ food })
         } else {
             res.status(500).json({ error: error })
         }
@@ -47,17 +47,17 @@ router.post('/log', (req, res) => {
 /** 
  * Action:         SHOW
  * Method:         GET
- * URI:            /log/12
- * Description: get one log by ID
+ * URI:            /food/12
+ * Description: get one food by ID
 */
-router.get('/log/:id', (req, res) => {
-    Log.findById(req.params.id, (error, log) => {
+router.get('/logs/food/:id', (req, res) => {
+ Food.findById(req.params.id, (error, food) => {
         if(!error){
                 // return true if exists
-            if (log) {
-                res.status(200).json({log: log});
+            if (food) {
+                res.status(200).json({food: food});
             } else {
-                // else if there is no log with matching ID
+                // else if there is no food with matching ID
                 res.status(404).json({
                     error: {
                         name:'DocumentNotFoundError',
@@ -77,15 +77,15 @@ router.get('/log/:id', (req, res) => {
 /** 
  * Action:         UPDATE
  * Method:         PATCH
- * URI:            /log/12
- * Description: get one log by ID
+ * URI:            /food/12
+ * Description: get one food by ID
 */
 
-router.patch('/log/:id', (req, res) => {
-    Log.findById(req.params.id, (error, log) => {
+router.patch('/food/:id', (req, res) => {
+ Food.findById(req.params.id, (error, food) => {
         if (!error) {
-            if (log) {
-                log.update(req.body, (error, log) => {
+            if (food) {
+                food.update(req.body, (error, food) => {
                     if (!error) {
                         res.status(204).end();
                     } else {
@@ -110,15 +110,15 @@ router.patch('/log/:id', (req, res) => {
 /** 
  * Action:         DESTROY
  * Method:         DELETE
- * URI:            /logs/:id
- * Description: Delete a log by id
+ * URI:            /foods/:id
+ * Description: Delete a food by id
 */
 
-router.delete('/log/:id', (req, res) => {
-    Log.findById(req.params.id, (error, log) => {
+router.delete('/food/:id', (req, res) => {
+ Food.findById(req.params.id, (error, food) => {
         if (!error) {
-            if (log) {
-                log.remove(req, (error, log) => {
+            if (food) {
+                food.remove(req, (error, food) => {
                     if (!error) {
                         res.status(204).end();
                     } else {

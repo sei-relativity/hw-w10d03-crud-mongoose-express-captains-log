@@ -3,7 +3,9 @@ const express = require('express');
 const mongoose = require('mongoose')
 
 // Require routes files
-const logRoutes = require('./app/routes/log_route')
+const logRoutes = require('./app/routes/log_route');
+const foodRoutes = require('./app/routes/food_route')
+
 
 
 // require  DB configration file
@@ -29,6 +31,7 @@ mongoose.connect(db, {useNewUrlParser: true}, ()=> {
 
 /*** Routes ***/
 app.use(logRoutes);
+app.use(foodRoutes)
 
 
 // Run API on designated port
