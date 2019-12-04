@@ -1,0 +1,34 @@
+/**
+ * Action:      SEED
+ * Method:      Get
+ * URI:         /logs/seed
+ * Description: seed data to the database
+ */
+router.get("/logs/seed", (req, res) => {
+  Log.insertMany(
+    [
+      {
+        title: "helloo",
+        entry: "boom",
+        shipIsBroken: true
+      },
+      {
+        title: "space",
+        entry: "man",
+        shipIsBroken: false
+      },
+      {
+        title: "green",
+        entry: "order",
+        shipIsBroken: true
+      }
+    ],
+    (error, logs) => {
+      if (!error) {
+        res.status(200).json({ logs: logs });
+      } else {
+        res.status(500).json({ error: error });
+      }
+    }
+  );
+});
