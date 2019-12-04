@@ -127,36 +127,5 @@ router.delete('/logs', (req, res) => {
         }
     })
 })
-/////////////////////////
-/** 
-* Action:         
- * Method:         GET
- * URI:            /logs/seed
- * Description: Seed data to database
-*/
-router.get('/logs/seed', (req, res) => {
-    Logs.insertMany([
-        {
-            name: 'grapefruit',
-            color: 'pink',
-            readyToEat: true
-        },
-        {
-            name: 'grape',
-            color: 'purple',
-            readyToEat: false
-        },
-        {
-            name: 'avocado',
-            color: 'green',
-            readyToEat: true
-        }
-    ], (error, fruits) => {
-        if (!error) {
-            res.status(200).json({ fruits: fruits });
-        } else {
-            res.status(500).json({ error: error })
-        }
-    });
-})
+
 module.exports = router;
